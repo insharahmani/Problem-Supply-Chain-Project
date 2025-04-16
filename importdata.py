@@ -33,34 +33,45 @@ print(df.isnull().sum())
 
 # View summary statistics
 print("\nSummary statistics:")
-print(df.describe())
-# -----------------------------
-# 1. Histogram for numerical columns
-# -----------------------------
-df.hist(color='lightcoral', edgecolor='black', figsize=(12, 8))
-plt.suptitle('Distribution of Numerical Features', fontsize=16, color='darkred')
-plt.tight_layout()
-plt.show()
+import pandas as pd
+import matplotlib.pyplot as plt
 
-# -----------------------------
-# 2. Correlation Heatmap (optional but useful)
-# -----------------------------
-plt.figure(figsize=(10, 6))
-sns.heatmap(df.corr(numeric_only=True), annot=True, cmap='Reds', fmt=".2f")
-plt.title('Correlation Heatmap', fontsize=16, color='darkred')
-plt.show()
+# Load the dataset
+df = pd.read_csv('supply_chain_extended_data.csv')
 
-# -----------------------------
-# 3. Bar Plot of Missing Values (if any)
-# -----------------------------
-missing_values = df.isnull().sum()
-missing_values = missing_values[missing_values > 0]
+# Show all columns
+print("\n✅ Columns in your dataset:")
+print(df.columns.tolist())
 
-if not missing_values.empty:
+# Set style to something safe
+plt.style.use('ggplot')
+
+# Red and light red
+main_color = '#e74c3c'     # Red
+border_color = '#f1948a'   # Light red
+
+# Correct column names from your dataset
+columns = [
+    'Current_Stock',
+    'Demand_Forecast',
+    'Lead_Time_Days',
+    'Shipping_Time_Days',
+    'Operational_Cost',
+    'Monthly_Sales',
+    'Order_Processing_Time',
+    'Return_Rate',
+    'Backorder_Quantity',
+    'Damaged_Goods'
+]
+
+# Plot 10 histograms
+for i, col in enumerate(columns, 1):
     plt.figure(figsize=(8, 4))
-    missing_values.plot(kind='bar', color='indianred', edgecolor='black')
-    plt.title('Missing Values per Column', fontsize=14, color='darkred')
-    plt.ylabel('Count')
-    plt.xticks(rotation=45)
+    plt.hist(df[col].dropna(), bins=20, color=main_color, edgecolor=border_color)
+    plt.title(f"{i}. Histogram of {col}", fontsize=14)
+    plt.xlabel(col, fontsize=12)
+    plt.ylabel('Frequency', fontsize=12)
+    plt.grid(True, linestyle='--', alpha=0.5)
     plt.tight_layout()
     plt.show()
+
