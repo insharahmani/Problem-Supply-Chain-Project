@@ -3,14 +3,10 @@ import pandas as pd                    # For DataFrame
 import numpy as np                     # For numerical operations
 import matplotlib.pyplot as plt        # For plotting
 import seaborn as sns                  # For better visualization
-
-# For Machine Learning and modeling (if needed)
-# (Install if not available: pip install pandas numpy matplotlib seaborn scikit-learn)
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
-# ✅ Provide the correct path to the CSV file (change it according to your location)
 file_path = 'C:/Users/insha/OneDrive/Desktop/Supply Chain/supply_chain_extended_data.csv'
 
 # Load the CSV file
