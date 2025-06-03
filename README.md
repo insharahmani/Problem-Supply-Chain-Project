@@ -1,6 +1,6 @@
 Supply Chain Problem Analysis & Dashboard
 
-An analytical project focused on identifying inefficiencies and risks in supply chain operations. Using **Python**, **SQL**, and **Power BI/Streamlit**, this project analyzes procurement, inventory, logistics, and supplier data to uncover key bottlenecks and recommend data-driven solutions.
+An analytical project focused on identifying inefficiencies and risks in supply chain operations. Using **Python**, and **Power BI**, this project analyzes procurement, inventory, logistics, and supplier data to uncover key bottlenecks and recommend data-driven solutions.
 
 
 
@@ -18,7 +18,8 @@ Tools & Technologies
 
 | Tool/Tech        | Purpose                                |
 |------------------|----------------------------------------|
-| Python (Pandas)  | Data cleaning and transformation       |  |
+| Python (Pandas)  | Data cleaning and transformation       |  
+| Matplotlib       | For generating clear visual insights into trends and patterns|
 | Power BI         | Interactive visualization dashboards   |    
 | Excel            | Exploratory data analysis (EDA)        |
 
@@ -50,8 +51,18 @@ Delays were highest in **Region X** due to supplier inconsistencies
 Inventory turnover improved after automation in **Warehouse Y*
 
 A 20% drop in on-time deliveries during Q2 due to route disruptions 
+## Challenges and Solutions
 
-Recommendation: switch to more reliable regional suppliers and optimize reordering policies
+| Challenge                          | Solution                                                     |
+|-----------------------------------|--------------------------------------------------------------|
+| Inconsistent and missing supplier data | Applied data cleaning using Pandas and custom imputation logic |
+| Difficulty visualizing trends     | Used Matplotlib for detailed, customized data plots          |
+
+Conclusion
+
+This project demonstrates how supply chain data, when properly analyzed, can inform smarter business decisions. By integrating Python, Matplotlib, and Power BI, the analysis identifies opportunities for improving supply chain efficiency, reducing costs, and supporting strategic planning.
+
+
 
 
 
